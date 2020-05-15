@@ -1,25 +1,32 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <p>{{ greeting() }}</p>
+    <ninjas></ninjas>
   </div>
 </template>
 
 <script>
+// START Register component Ninja locally:
+import Ninjas from './Ninjas.vue';
+// END Register component Ninja locally:
+
 export default {
+  // START Register component Ninja locally:
+  components: {
+    'ninjas': Ninjas
+    },
+  // END Register component Ninja locally:
   data () {
     return {
-      title: 'Your first Vue file, wooo!'
+      title: 'Ninja App'
     }
-  },
-  methods: {
-    greeting() {
-      return 'Hey Cowboy!';
-          }
   }
 }
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: palegreen;
+}
 
 </style>
