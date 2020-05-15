@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { eventBus } from '../main';
+
 export default {
   props: {
     title: {
@@ -16,6 +18,11 @@ export default {
     return {
       copyright: "© 2020, Rubén Fructuoso, "
     };
+  },
+  created(){
+      eventBus.$on('titleChanged', (data) => {
+          this.title = data;
+      });
   }
 };
 </script>

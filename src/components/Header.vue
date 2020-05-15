@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { eventBus } from '../main';
+
 export default {
   props: {
     title: {
@@ -17,7 +19,9 @@ export default {
   },
   methods: {
       changeTitle(){
-          this.$emit('changeTitle', "Tiago's Vue");
+          //this.$emit('changeTitle', "Tiago's Vue");
+          this.title = "Tiago's Vue";
+          eventBus.$emit('titleChanged', "Tiago's Vue");
       }
   }
 };
