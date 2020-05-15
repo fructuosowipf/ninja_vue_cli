@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header v-bind:title="title"></app-header>
+    <app-header v-bind:title="title" @changeTitle="updateTitle($event)"></app-header>
     <ninjas v-bind:ninjas="ninjas"></ninjas>
     <app-footer v-bind:title="title"></app-footer>
   </div>
@@ -29,9 +29,19 @@ export default {
         { name: "Yoshi", speciality: "Data Diggin", show: false }
       ]
     };
+  },
+  methods: {
+    updateTitle(updatedTitle){
+      this.title = updatedTitle;
+    }
   }
 };
 </script>
 
-<style scoped>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+* {
+  font-family: 'DM Mono', monospace;
+}
+
 </style>
