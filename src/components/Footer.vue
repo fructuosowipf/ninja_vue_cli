@@ -20,7 +20,7 @@ export default {
     };
   },
   created(){
-      eventBus.$on('titleChanged', (data) => {
+      eventBus.$on('titleChangedEmitFromHeader', (data) => {
           this.title = data;
       });
   }

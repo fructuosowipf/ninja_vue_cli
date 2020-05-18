@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 @click="changeTitle">{{ title }}</h1>
+    <h1 @click="changeTitleHeader">{{ title }}</h1>
   </header>
 </template>
 
@@ -18,10 +18,10 @@ export default {
     return {};
   },
   methods: {
-      changeTitle(){
+      changeTitleHeader(){
           //this.$emit('changeTitle', "Tiago's Vue");
           this.title = "Tiago's Vue";
-          eventBus.$emit('titleChanged', "Tiago's Vue");
+          eventBus.$emit('titleChangedEmitFromHeader', "Tiago's Vue");
       }
   }
 };
