@@ -4,13 +4,12 @@
     </div>
 </template>
 
+
 <script>
-// Imports
-import formHelper from './components/formHelper'
 
 export default {
     components: {
-        'form-helper': formHelper
+        
     },
     data () {
         return {
@@ -22,9 +21,3 @@ export default {
     }
 }
 </script>
-
-<style>
-body{
-    margin: 0;
-}
-</style>
