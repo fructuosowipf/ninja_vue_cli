@@ -27,6 +27,29 @@ export default {
     deleteNinja() {
       this.ninjas.pop();
     }
+  },
+  // lifecycle hookes
+  beforeCreate() {
+      alert('beforeCreate');
+  },
+  created() {
+      alert('created');
+      //best to fetch data from a Database instead of mounted, which a lot of peaople use
+  },
+  beforeMount(){
+      alert('beforeMount');
+  },
+  mounted(){
+      alert('mounted');
+      //good for manipulating DOM
+  },
+  beforeUpdate(){
+      alert('beforeUpdate');
+  },
+  updated(){
+      alert('updated');
+        //good for manipulating DOM
+
   }
 };
 </script>
