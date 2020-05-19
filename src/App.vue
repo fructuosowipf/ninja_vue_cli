@@ -1,6 +1,18 @@
 <template>
     <div>
-        <h1>I am the form helper</h1>
+        <form-helper>
+          <div slot="form-header">
+            <h3>This is the Title of the Form</h3>
+            <p>Information about the form</p>
+          </div>
+          <div slot="form-fields">
+            <input type="text" placeholder="name" required />
+            <input type="password" placeholder="password" required />
+          </div>
+          <div slot="form-controls">
+            <button @click="handleSubmit">Submit</button>
+          </div>
+        </form-helper>
     </div>
 </template>
 
@@ -14,7 +26,7 @@ export default {
     },
     data () {
         return {
-
+          title: 'I am a dynamic slot title'
         }
     },
     methods: {
