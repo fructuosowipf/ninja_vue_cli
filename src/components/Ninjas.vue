@@ -22,7 +22,7 @@ export default {
   },
   data() {
     return {};
-  },
+  }, 
   methods: {
     deleteNinja() {
       this.ninjas.pop();
