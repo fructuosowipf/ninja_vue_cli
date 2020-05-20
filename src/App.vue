@@ -1,11 +1,19 @@
 <template>
-  <div></div>
+  <div>
+    <add-blog>
+      
+    </add-blog>
+  </div>
 </template>
 
 <script>
 // Imports
+import addBlog from './components/addBlog';
 
 export default {
+  components: {
+    'add-blog': addBlog
+  },
   data() {
     return {};
   },
