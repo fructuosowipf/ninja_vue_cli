@@ -18,15 +18,17 @@
 
 <script>
 // Imports
-import formHelper from './components/formHelper'
+import formOne from './components/formOne';
+import formTwo from './components/formTwo';
 
 export default {
     components: {
-        'form-helper': formHelper
+        'form-one': formOne,
+        'form-two': formTwo
     },
     data () {
         return {
-          title: 'I am a dynamic slot title'
+         
         }
     },
     methods: {
