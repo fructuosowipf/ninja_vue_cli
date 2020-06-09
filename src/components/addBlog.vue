@@ -18,7 +18,7 @@
       </div>
       <label>Author:</label>
       <select v-model="blog.author">
-        <option v-for="author in authors">{{ author }}</option>
+        <option v-for="author in authors" v-bind:key="author">{{ author }}</option>
       </select>
     </form>
     <div id="preview">
@@ -28,7 +28,7 @@
 
       <p>Blog Categories:</p>
       <ul>
-        <li v-for="category in blog.categories">{{ category }}</li>
+        <li v-for="category in blog.categories" v-bind:key="category">{{ category }}</li>
       </ul>
       <p>Blog Content:</p>
       <p>{{ blog.content }}</p>
