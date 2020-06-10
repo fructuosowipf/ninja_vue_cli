@@ -1,8 +1,8 @@
 <template>
-  <div id="show-blogs">
+  <div v-theme:column="'narrow'" id="show-blogs">
     <h1>All Blog Articles</h1>
     <div v-for="article in articles" v-bind:key="article" class="single-blog">
-        <h2>{{ article.title }}</h2>
+        <h2 v-regenbogen>{{ article.title }}</h2>
         <p>{{ article.body }}</p>
     </div>
   </div>
