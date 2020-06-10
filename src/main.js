@@ -7,7 +7,7 @@ import VueResource from 'vue-resource'
 //Vue.use(VueAxios, axios);
 Vue.use(VueResource);
 
-// Custom directives:
+// Custom directives, added as attributes in showBlogs.vue:
 
 Vue.directive('regenbogen', {
   bind(el,binding,vnode) {
@@ -27,8 +27,17 @@ Vue.directive('theme', {
       el.style.padding = "20px";
     }
   }
-})
+});
 
+// custom Filters, added after the Pipe (|) in showBlogs.vue
+
+Vue.filter('to-uppercase', value => {
+  return value.toUpperCase();
+});
+
+Vue.filter('snippet', value => {
+  return value.slice(0,100) + "...";
+});
 
 new Vue({
   el: '#app',
