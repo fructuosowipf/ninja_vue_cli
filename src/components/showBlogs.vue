@@ -10,7 +10,9 @@
 </template>
 
 <script>
-export default {
+import searchMixin from '../mixins/searchMixin';
+
+export default {  
   components: {},
   data() {
     return {
@@ -30,12 +32,9 @@ export default {
       )
   },
   computed: {
-    filteredArticles(){
-      return this.articles.filter((blog) => {
-        return blog.title.match(this.search);
-      })
+    
     }
-  },
+  ,
   filters : {
     toUppercase(value) {
       return value.toUpperCase();
@@ -47,7 +46,8 @@ export default {
         el.style.color = "#" + Math.random().toString().slice(2,8);
       }
     }
-  }
+  },
+  mixins: [searchMixin]
 };
 </script>
 
