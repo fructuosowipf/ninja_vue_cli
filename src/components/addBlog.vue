@@ -79,7 +79,7 @@ export default {
           })
         .then(function(response) {
           console.log(response);
-          //this.submitted = true;
+          this.submitted = true;
         });
     }
   }
