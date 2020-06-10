@@ -50,6 +50,7 @@
 
 
 <script>
+//import axios from 'axios';
 export default {
   data() {
     return {
@@ -61,23 +62,24 @@ export default {
       },
       authors: ["Tiago Fructuoso", "Rubén Fructuoso", "Jenny Fructuoso"],
       submitted: false
-    }
+    };
   },
   methods: {
-    senden(){
+    senden() {
+      console.log("klick!");
 
-      //console.log('klick!');
+      
 
       this.$http
         .post("https://jsonplaceholder.typicode.com/posts", {
-          title: this.blog.title,
-          body: this.blog.content,
-          userId: 25
-        }) 
-        .then(function(data) {
           
-          console.log(data);
-          this.submitted = true
+            title: this.blog.title,
+            body: this.blog.content,
+            userId: 25
+          })
+        .then(function(response) {
+          console.log(response);
+          //this.submitted = true;
         });
     }
   }
