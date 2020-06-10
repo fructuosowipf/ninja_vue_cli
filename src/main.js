@@ -9,11 +9,6 @@ Vue.use(VueResource);
 
 // Custom directives, added as attributes in showBlogs.vue:
 
-Vue.directive('regenbogen', {
-  bind(el,binding,vnode) {
-    el.style.color = "#" + Math.random().toString().slice(2,8);
-  }
-});
 
 Vue.directive('theme', {
   bind(el,binding,vnode){
@@ -31,9 +26,6 @@ Vue.directive('theme', {
 
 // custom Filters, added after the Pipe (|) in showBlogs.vue
 
-Vue.filter('to-uppercase', value => {
-  return value.toUpperCase();
-});
 
 Vue.filter('snippet', value => {
   return value.slice(0,100) + "...";
