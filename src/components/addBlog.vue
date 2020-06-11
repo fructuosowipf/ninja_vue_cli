@@ -71,12 +71,7 @@ export default {
       
 
       this.$http
-        .post("https://jsonplaceholder.typicode.com/posts", {
-          
-            title: this.blog.title,
-            body: this.blog.content,
-            userId: 25
-          })
+        .post("https://ninja-vue-fw.firebaseio.com/posts.json", this.blog)
         .then(function(response) {
           console.log(response);
           this.submitted = true;
