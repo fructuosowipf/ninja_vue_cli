@@ -1,8 +1,13 @@
 <template>
   <div id="single-blog">
       <h1>{{ article.title }}</h1>
-      <article>{{ article.body }}</article>
-      <p>Id: {{ article.id }}</p>
+      <article>{{ article.content }}</article>
+      <p>Author: {{ article.author }}</p>
+      <p>Categories:</p>
+      <ul>
+          <li v-for="category in article.categories" v-bind:key="category">{{category }}</li>
+      </ul>
+      
   </div>
 </template>
 
@@ -15,10 +20,14 @@ export default {
         }
     },
     created() {
-        this.$http.get('https://jsonplaceholder.typicode.com/posts/' + this.id).then(
+        this.$http.get('https://ninja-vue-fw.firebaseio.com/posts/' + this.id + '.json').then(
             (data) => {
                 console.log(data);
-                this.article = data.body;
+                return data.json();
+            }
+        ).then(
+            (data) => {
+                this.article = data;
             }
         );
     }
