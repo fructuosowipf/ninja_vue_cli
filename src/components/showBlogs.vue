@@ -24,7 +24,7 @@ export default {
       
   },
   created(){
-      this.$http.get('https://jsonplaceholder.typicode.com/posts',).then(
+      this.$http.get('https://ninja-vue-fw.firebaseio.com/posts.json',).then(
           data => {
               console.log(data);
               this.articles = data.body.slice(0,10);
